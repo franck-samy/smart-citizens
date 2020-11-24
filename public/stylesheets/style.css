@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  /* padding: 50px; */
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+h1 {
+  color: 15px;
+}
+
+#map{
+  width: 100vw;
+  height: 100vw;
+}
+
+nav{
+  background-color: lightsteelblue;
+  width: 100vw;
+  height: 50px;
+  display: flex;
+}
+
+.marker {
+  background-color: greenyellow;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#message{
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  width: 100vw;
+  opacity: 0.8;
+  visibility: visible;
+  position: absolute;
+  top: 0px;
+}
+
+p{
+  font-size: 30px;
+  color: white;
+  padding: 10px;
+}
+
+#box{
+  display: flex;
+  align-items: top;
+  background-color: indigo;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: 60px;
+  visibility: hidden;
+}
+
+#ask{
+  display: flex;
+  align-items: top;
+  flex-direction: column;
+  background-color: indigo;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 400px;
+  visibility: hidden;
+}
+
+#ask #question{
+  color: white;
+  font-size: 15px;
+  padding: 30px 20px 30px 20px;
+}
+
+#options li{
+  color: white;
+  list-style-type: none;
+  padding: 30px 20px 20px 20px;
+  font-size: 16px;
+  background-color: mediumturquoise;
+  border: solid 1px;
+}
+
+#options li:hover{
+  background-color: green;
+}
+
+#quizz{
+  width: 100%;
+  height: 80px;
+  background-color: lightgreen;
+  font-size: 20px;
+  text-align: center;
+  border: none;
+}
+
+#quizz:hover{
+  background-color: green;
+}
+
+#skip{
+  width: 100px;
+  height: 50px;
+  background-color: lawngreen;
+  visibility: hidden;
+}
+
+#refresh{
+  width: 100vw;
+  height: 50px;
+  background-color: blue;
+  visibility: visible;
+  color: white;
+  border: none;
+  font-size: 25px;
+}
+
+#refresh:hover{
+  background-color: green;
+}
+
+
+/*# sourceMappingURL=style.css.map */
