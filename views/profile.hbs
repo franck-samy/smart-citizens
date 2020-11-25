@@ -1,16 +1,37 @@
 <h1>Profile page</h1>
 
-<div>
-  <img src="#" alt="">
+<a href="/update-profile">update pic</a>
+<a href="/game">game</a>
+
+<container id='profile'>
+  <div>
+    <img id="profile" src="https://res.cloudinary.com/dbupkxtye/image/upload/v1606249087/xqjwsl25opyvpnlbisvy.jpg"
+      alt="">
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+      <input type="file" name="imageUrl" accept="image/png, image/jpg">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <div>
+    <h3>Username:{{user}}</h3>
+    <h3>Score: {{score}}</h3>
+    <h3>Ranking: {{ranking}}</h3>
+    <h3>City: {{city}}</h3>
+  </div>
+</container>
+
+<div id="feed-title">
+  <h2>Challenge Pictures</h2>
 </div>
 
-<div>
-  <h3>Username:{{user}}</h3>
-  <h3>Score: {{score}}</h3>
-  <h3>Ranking: {{ranking}}</h3>
-  <h3>City: {{city}}</h3>
+<div id="feed-submit">
+  <form method="POST" action="/upload" enctype="multipart/form-data">
+    <input type="file" name="imageUrl" accept="image/png, image/jpg">
+    <button type="submit">Submit</button>
+  </form>
 </div>
 
 <div id="feed">
-
+  <img src="https://res.cloudinary.com/dbupkxtye/image/upload/v1606249087/xqjwsl25opyvpnlbisvy.jpg" alt="">
 </div>
