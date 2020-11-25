@@ -7,6 +7,7 @@ const app = require('../app');
 const profileRouter = require('./profile.route');
 const updateRouter = require('./file-upload.route');
 const gameRouter = require('./game.route');
+const questionRouter = require('./question.route');
 
 
 /* GET home page */
@@ -19,6 +20,7 @@ router.get('/', (req, res, next) => {
 router.use('/', profileRouter);
 router.use('/', updateRouter);
 router.use('/', gameRouter);
+router.use('/', questionRouter);
 
 
 
