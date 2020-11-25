@@ -1,5 +1,6 @@
 <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 
 <div id="map"></div>
@@ -10,16 +11,21 @@
 
   <div id="ask">
     <div id="question">
-      <h3>{{questions.question}}</h3>
+      <h3>{{randomQuestion.question}}</h3>
     </div>
     <div id="options">
       <ul>
-        <li>{{option1}}</li>
-        <li>{{option2}}</li>
-        <li>{{option3}}</li>
-        <li>{{option4}}</li>
+        {{#each randomQuestion.options}}
+        <li>{{a}}</li>
+        <li>{{b}}</li>
+        <li>{{c}}</li>
+        <li>{{d}}</li>
+        {{/each}}
+        <li>Score: {{userScore.score}}</li>
+
+        <li id="correctAns">{{randomQuestion.correctAnswer}}</li>
+
       </ul>
-      <button id="quizz">Answer</button>
     </div>
   </div>
 
@@ -30,7 +36,7 @@
 </div>
 
 <script>
-  const userInfo = {{{ user }}};
+  //const userInfo = {{{ user }}};
 </script>
 
 <script src="javascripts/map.js"></script>

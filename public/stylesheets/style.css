@@ -169,6 +169,10 @@ container{
   border: solid 1px white;
 }
 
+#correctAns{
+  display:none;
+}
+
 
 
 

@@ -11,10 +11,6 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 
-
-
-
-
 const app = express();
 
 // ℹ️ This function is getting exported from the config folder. It runs most middlewares
@@ -26,6 +22,10 @@ const capitalized = (string) =>
 
 app.locals.title = `${capitalized(projectName)}- Generated with IronGenerator`;
 // default value for title local
+app.use((req, res, next) => {
+  app.locals.score = req.session.user.score;
+  next();
+});
 
 // 👇 Start handling routes here
 const index = require("./routes/index");

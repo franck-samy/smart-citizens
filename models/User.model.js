@@ -10,6 +10,10 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: [true, 'Must have a password!']
+  },
+  score: {
+    type: Number,
+    default: 0,
   }
 });
 

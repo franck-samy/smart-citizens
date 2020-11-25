@@ -46,7 +46,7 @@ let questions = [
       a: 'One of the most glamorous shopping areas in the world', b: 'Two of the most famous presidents died there', c: "It's the street that is most featured in the movies", d: "The street that occurs in most songs"
     }]
   }]
-  
+
 mongoose.connect(MONGO_URI, {
   useCreateIndex: true,
   useNewUrlParser: true,
@@ -58,7 +58,7 @@ mongoose.connect(MONGO_URI, {
   console.log(data);
   mongoose.connection.close();
 })
-.catch(err => {
-  console.log(err)
-})
+  .catch(err => {
+    console.log(err)
+  })
 
