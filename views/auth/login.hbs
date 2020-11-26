@@ -1,23 +1,28 @@
 <!--
   <link rel="stylesheet" href="../public/stylesheets/Register.css">
 -->
-<div class="container">
-   <form action="sign-in" method="POST" id="form" class="form">
-      <h2>Welcome back!</h2>
 
-      <div class="form-control">
-         <label for="username">Username</label>
-         <input name="username" id="username" type="text" placeholder="Enter username">
+<body id="signup-body">
+   <div class="container">
+      <form action="sign-in" method="POST" id="form" class="form">
+         <h2 id="signup-title">Welcome back!</h2>
+
+         <div class="form-control">
+            <label for="username">Username</label>
+            <input name="username" id="username" type="text" placeholder="Enter username">
+         </div>
+
+         <div class="form-control">
+            <label for="password">Password</label>
+            <input name="password" id="password" type="password" placeholder="Enter password">
+         </div>
+
+         <button class="btn">Sign in</button>
+      </form>
+      <div>
+         <img src="../../images/city.png" alt="">
       </div>
-
-      <div class="form-control">
-         <label for="password">Password</label>
-         <input name="password" id="password" type="password" placeholder="Enter password">
-      </div>
-
-      <button class="btn">Sign in</button>
-   </form>
-</div>
+   </div>
 </body>
 
 </html>

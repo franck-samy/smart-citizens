@@ -2,6 +2,12 @@
 <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
+<nav>
+  <ul>
+    <li id="score">Score: {{score}}</li>
+
+  </ul>
+</nav>
 
 <div id="map"></div>
 
@@ -21,7 +27,6 @@
         <li>{{c}}</li>
         <li>{{d}}</li>
         {{/each}}
-        <li>Score: {{userScore.score}}</li>
 
         <li id="correctAns">{{randomQuestion.correctAnswer}}</li>
 

@@ -1,9 +1,17 @@
-<h1>Profile page</h1>
+<nav id="nav-profile">
+  <ul>
 
-<a href="/update-profile">update pic</a>
-<a href="/game">game</a>
+    <a href="/update-profile">update pic</a>
+    <a href="/game">game</a>
 
-<container id='profile'>
+
+  </ul>
+</nav>
+<h1 id="profile-title">Profile page</h1>
+
+
+
+<container id="container-profile">
   <div>
     <img id="profile" src="https://res.cloudinary.com/dbupkxtye/image/upload/v1606249087/xqjwsl25opyvpnlbisvy.jpg"
       alt="">
@@ -13,11 +21,13 @@
     </form>
   </div>
 
-  <div>
+  <div id="user-info">
     <h3>Username:{{user}}</h3>
     <h3>Score: {{score}}</h3>
     <h3>Ranking: {{ranking}}</h3>
     <h3>City: {{city}}</h3>
+    <h3>About me: {{about}}</h3>
+
   </div>
 </container>
 

@@ -2,6 +2,58 @@
   margin: 0;
   padding: 0;
 }
+
+#homepage {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(68, 133, 157);
+  width: 100vw;
+  height: 100vw;
+}
+
+#homepage img {
+  background-color: rgb(68, 133, 157);
+  width: 300px;
+}
+
+#homepage .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 300px;
+  color: rgb(68, 104, 157);
+  background-color: white;
+  margin-top: 30px;
+  border-radius: 30px;
+}
+
+#homepage .button:hover {
+  background-color: indigo;
+}
+
+#homepage a {
+  text-decoration: none;
+  color: rgb(68, 133, 157);
+  font-size: 20px;
+}
+
+#homepage h1 {
+  color: indigo;
+  font-size: 45px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#homepage h2 {
+  color: white;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
 body {
   /* padding: 50px; */
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -15,16 +67,66 @@ h1 {
   color: 15px;
 }
 
-#map{
+#map {
   width: 100vw;
   height: 100vw;
 }
 
-nav{
-  background-color: lightsteelblue;
+nav {
+  background-color: rgb(68, 133, 157);
   width: 100vw;
-  height: 50px;
+  height: 80px;
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav li {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+
+#nav-profile {
+  width: 100vw;
+}
+
+#profile-title {
+  text-align: center;
+  margin-top: 30px;
+  color: indigo;
+  font
+}
+
+#nav-profile ul {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+#nav-profile a {
+  color: indigo;
+  text-decoration: none;
+  font-size: 20px;
+  height: 25px;
+  width: 150px;
+  margin-right: 10px;
+  padding: 20px 20px 20px 20px;
+  background-color: white;
+  border-radius: 30px;
+  border: none;
+  text-align: center;
+}
+
+#nav-profile a:hover {
+  color: white;
+  background-color: indigo;
+}
+
+#score {
+  font-size: 20px;
+  color: white;
 }
 
 .marker {
@@ -35,7 +137,7 @@ nav{
   cursor: pointer;
 }
 
-#message{
+#message {
   display: flex;
   justify-content: center;
   align-items: top;
@@ -46,40 +148,41 @@ nav{
   top: 0px;
 }
 
-p{
+p {
   font-size: 30px;
   color: white;
   padding: 10px;
 }
 
-#box{
+#box {
   display: flex;
   align-items: top;
   background-color: indigo;
-  margin-top: 50px;
+  margin-top: 100px;
   margin-bottom: 50px;
   height: 60px;
   visibility: hidden;
 }
 
-#ask{
+#ask {
   display: flex;
   align-items: top;
   flex-direction: column;
   background-color: indigo;
-  margin-top: 50px;
+  margin-top: 100px;
   margin-bottom: 50px;
   width: 400px;
+  height: 70vw;
   visibility: hidden;
 }
 
-#ask #question{
+#ask #question {
   color: white;
   font-size: 15px;
   padding: 30px 20px 30px 20px;
 }
 
-#options li{
+#options li {
   color: white;
   list-style-type: none;
   padding: 30px 20px 20px 20px;
@@ -88,11 +191,11 @@ p{
   border: solid 1px;
 }
 
-#options li:hover{
+#options li:hover {
   background-color: green;
 }
 
-#quizz{
+#quizz {
   width: 100%;
   height: 80px;
   background-color: lightgreen;
@@ -101,79 +204,146 @@ p{
   border: none;
 }
 
-#quizz:hover{
+#quizz:hover {
   background-color: green;
 }
 
-#skip{
+#skip {
   width: 100px;
   height: 50px;
   background-color: lawngreen;
   visibility: hidden;
 }
 
-#refresh{
+#refresh {
   width: 100vw;
   height: 50px;
-  background-color: blue;
+  background-color: indigo;
   visibility: visible;
   color: white;
   border: none;
   font-size: 25px;
 }
 
-#refresh:hover{
+#refresh:hover {
   background-color: green;
 }
 
-#profile{
+#profile {
   height: 180px;
   width: 180px;
 }
 
-#feed img{
+#feed img {
   width: 250px;
   height: 250px;
 }
 
-container{
+#container-profile {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   width: 100vw;
   margin-top: 30px;
   margin-bottom: 100px;
 }
 
-#feed-title{
+#user-info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+#user-info h3 {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+#feed-title {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(68, 104, 157);
+  background-color: indigo;
   color: white;
   height: 60px;
 }
 
-#feed-submit{
+#feed-submit {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:rgb(68, 133, 157) ;
+  background-color: rgb(68, 133, 157);
   height: 50px;
 }
 
-#feed-submit button{
+#feed-submit button {
   height: 50px;
   width: 80px;
-  background-color: rgb(68, 133, 157) ;
+  background-color: rgb(68, 133, 157);
   color: white;
   border: solid 1px white;
 }
 
-#correctAns{
-  display:none;
+#correctAns {
+  display: none;
+  visibility: hidden;
 }
 
+#signup-body {
+  background-color: rgb(68, 133, 157);
+  text-align: center;
+}
 
+.form-control {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  width: 100vw;
+}
 
+.form-control input {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  width: 300px;
+  height: 60px;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+}
+
+.form-control label {
+  font-size: 30px;
+  color: indigo;
+  text-align: center;
+}
+
+.btn {
+  font-size: 20px;
+  color: rgb(68, 133, 157);
+  text-align: center;
+  background-color: white;
+  width: 300px;
+  height: 60px;
+  border-radius: 30px;
+  border: none;
+  margin-top: 30px;
+}
+
+.btn:hover {
+  color: rgb(68, 133, 157);
+  background-color: indigo;
+}
+
+#signup-title {
+  color: white;
+  font-size: 45px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -1,29 +1,31 @@
-<!--
-  <link rel="stylesheet" href="../public/stylesheets/Register.css">
--->
-<div class="container">
-   <form action="signup" method="POST" id="form" class="form">
-      <h2>Register here</h2>
+<body id="signup-body">
+   <div class="container">
 
-      <div class="form-control">
-         <label for="username">Username</label>
-         <input name="username" id="username" type="text" placeholder="Enter username">
-      </div>
-      <!--Email, maybe not needed?
+      <form action="signup" method="POST" id="form" class="form">
+         <h2 id="signup-title">Register here</h2>
+
+         <div class="form-control">
+            <label for="username">Username</label>
+            <input name="username" id="username" type="text" placeholder="Enter username">
+         </div>
+         <!--Email, maybe not needed?
     <div class="form-control">
       <label for="email">Email</label>
       <input name="email" id="email" type="text" placeholder="Enter email">
     </div>
     -->
 
-      <div class="form-control">
-         <label for="password">Password</label>
-         <input name="password" id="password" type="password" placeholder="Enter password">
-      </div>
+         <div class="form-control">
+            <label for="password">Password</label>
+            <input name="password" id="password" type="password" placeholder="Enter password">
+         </div>
 
-      <button class="btn">Submit</button>
-   </form>
-</div>
+         <button class="btn">Submit</button>
+      </form>
+      <div>
+         <img src="../../images/city.png" alt="">
+      </div>
+   </div>
 </body>
 
 </html>
