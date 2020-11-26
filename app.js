@@ -23,7 +23,10 @@ const capitalized = (string) =>
 app.locals.title = `${capitalized(projectName)}- Generated with IronGenerator`;
 // default value for title local
 app.use((req, res, next) => {
-  app.locals.score = req.session.user.score;
+  if (req.session.user) {
+    res.locals.score = req.session.user.score;
+  }
+
   next();
 });
 
