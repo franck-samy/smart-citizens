@@ -1,64 +1,166 @@
-const Question = require('./Questions.model');
-const mongoose = require('mongoose');
+const Question = require("./Questions.model");
+const mongoose = require("mongoose");
 
-const MONGO_URI = "mongodb://localhost/newproject";
+// const MONGO_URI = "mongodb://localhost/newproject";
+const MONGO_URI = process.env.MONGODB_URI_LIVE;
 
 let questions = [
   {
-    question: 'The architect behind Sagrada Família is?',
-    correctAnswer: "Antoni Gaudí",
-    options: [{ a: "Pablo Picasso", b: 'Antoni Gaudí', c: "Antonio Vivaldi", d: "Ludwig Mies van der Rohe" }]
+    question: "How is the basilica Sacre Coeur mainly accessible?",
+    correctAnswer: "Ramp",
+    options: [{ a: "Tunnel", b: "Stairs", c: "Escalator", d: "Ramp" }],
   },
   {
-    question: 'Which of the following facts are true about Palacio Real de Madrid?',
-    correctAnswer: "It's the biggest royal castle in Europe",
-    options: [{ a: "It's the biggest royal castle in Europe", b: 'It was Colombus home for two years', c: "The castle have more than 3500 rooms", d: "Until this day, there is still a royal family living there" }]
+    question: "What is true about Notre Dame?",
+    correctAnswer: "It is the most famous catedral in the world",
+    options: [
+      {
+        a: "It is the most famous catedral in the world",
+        b: "There are more than 400 full-time employed priests there",
+        c: "It is a place where you can sleep for just 20 franc ",
+        d: "The idea is to build Notre dam originally came from Quasimodo",
+      },
+    ],
   },
   {
-    question: 'How many people flock around Brandenburger Tor during New Year’s Eve party?',
-    correctAnswer: "About a million",
-    options: [{ a: 'Around hundred thousand', b: 'Around fifty thousand', c: "Around six hundred thousand", d: "Around a million" }]
+    question: "Why was Triumphal Arch of Orange builded?",
+    correctAnswer: "To honor the veterans of the Gallic Wars",
+    options: [
+      {
+        a:
+          "To honor the veterans that participated in the Battle of Silva Arsia",
+        b:
+          "To honor the veterans that participated in the Battle of Agrigentum",
+        c: "To honor the veterans that participated in the Gallic Wars",
+        d: "To honor Julius Ceasar",
+      },
+    ],
   },
   {
-    question: 'What is one of the things Neuschwanstein is famous for?',
-    correctAnswer: "Inspiration for Disney's theme park castles",
-    options: [{ a: 'It has the most amount of doors per square feet', b: 'It was builded in just 10 years', c: "Inspiration for Walt Disney's famous theme park castles", d: "It has been torn down and rebuilt more than 23 times" }]
+    question: "What is true about Hôtel de ville?",
+    correctAnswer: "USA & Germany",
+    options: [
+      {
+        a: "It has been featured in movies 456 times",
+        b:
+          "The square in front of the building used to be a site of horrible executions",
+        c: "Frank Sinatra has mentioned this hotel six times in his songs",
+        d: "The hotel has three libaries",
+      },
+    ],
   },
   {
-    question: 'When was the berlin wall torn down?',
-    correctAnswer: '9 November, 1989',
-    options: [{ a: '9 November, 1989', b: '11 November, 1990', c: '9 Febuary, 1978', d: '4 June, 1983' }]
+    question: "What coutries fought in Omaha Beach?",
+    correctAnswer: "USA & Germany",
+    options: [
+      {
+        a: "USA & Russia",
+        b: "Russia & Germany",
+        c: "Gerany & France",
+        d: "USA & Germany",
+      },
+    ],
   },
   {
-    question: 'What is Lovre?',
-    correctAnswer: "Worlds largest museum",
-    options: [{ a: 'A pyramid that Leonardo Da Vinci architected', b: 'An museum that has a famous sculpture called Venus De Milano', c: "World's second largest museum", d: "Worlds largest museum" }]
+    question: "How many paintings do Musée Picasso have?",
+    correctAnswer: "300",
+    options: [{ a: "100", b: "200", c: "300", d: "560" }],
   },
   {
-    question: 'When was the Eiffel Tower built?',
-    correctAnswer: '28 January, 1887',
-    options: [{ a: '28 January, 1887', b: '30 January, 1881', c: '5 May, 1776', d: '23 May, 1872' }]
+    question: "How many people are buried in the Catacombes de Paris?",
+    correctAnswer: "Around 6 million",
+    options: [
+      {
+        a: "Around 1 million",
+        b: "Around 6 million",
+        c: "Around 20 million",
+        d: "Around 16 million",
+      },
+    ],
   },
   {
-    question: 'What is Champs-Élysées most famous for?',
-    correctAnswer: 'One of the most glamorous shopping areas in the world',
-    options: [{
-      a: 'One of the most glamorous shopping areas in the world', b: 'Two of the most famous presidents died there', c: "It's the street that is most featured in the movies", d: "The street that occurs in most songs"
-    }]
-  }]
+    question: "What famous person are buried in Hôtel des Invalides graveyard?",
+    correctAnswer: "Napoleon I",
+    options: [
+      {
+        a: "Napoleon II",
+        b: "Napoleon IIII",
+        c: "Napoleon V",
+        d: "Napoleon I",
+      },
+    ],
+  },
+  {
+    question: "Which of the following are true about Moulin Rouge?",
+    correctAnswer: "It was the first building in Paris to have electricity",
+    options: [
+      {
+        a: "It was built during the american civil war",
+        b: "It was the first building in Paris to have electricity",
+        c: "There is 200 hundred full-time performers there",
+        d: "There are around million visitors each year",
+      },
+    ],
+  },
+  {
+    question: "Who was the first king to live in Palace of Versailles?",
+    correctAnswer: "Louis XIII",
+    options: [
+      { a: "Louis XIV", b: "Louis XIII", c: "Ludvig XII", d: "Ludvig XVI" },
+    ],
+  },
+  {
+    question: "What is Louvre?",
+    correctAnswer: "World's largest museum",
+    options: [
+      {
+        a: "A pyramid that Leonardo Da Vinci architected",
+        b: "An museum that has a famous sculpture called Venus De Milano",
+        c: "World's second largest museum",
+        d: "World's largest museum",
+      },
+    ],
+  },
+  {
+    question: "When was the Eiffel Tower built?",
+    correctAnswer: "28 January, 1887",
+    options: [
+      {
+        a: "28 January, 1887",
+        b: "30 January, 1881",
+        c: "5 May, 1776",
+        d: "23 May, 1872",
+      },
+    ],
+  },
+  {
+    question: "What is Champs-Élysées most famous for?",
+    correctAnswer: "One of the most glamorous shopping areas in the world",
+    options: [
+      {
+        a: "One of the most glamorous shopping areas in the world",
+        b: "Two of the most famous presidents died there",
+        c: "It' the street that is most featured in the movies",
+        d: "The street that occurs in most songs",
+      },
+    ],
+  },
+];
 
-mongoose.connect(MONGO_URI, {
-  useCreateIndex: true,
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(() => {
-  console.log("connected to DB");
-  return Question.insertMany(questions);
-}).then(data => {
-  console.log(data);
-  mongoose.connection.close();
-})
-  .catch(err => {
-    console.log(err)
+mongoose
+  .connect(MONGO_URI, {
+    useCreateIndex: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
   })
-
+  .then(() => {
+    console.log("connected to DB");
+    return Question.insertMany(questions);
+  })
+  .then((data) => {
+    console.log(data);
+    mongoose.connection.close();
+  })
+  .catch((err) => {
+    console.log(err);
+  });

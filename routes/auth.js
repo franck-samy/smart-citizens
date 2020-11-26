@@ -19,7 +19,7 @@ router.get("/signup", shouldNotBeLoggedIn, (req, res) => {
 });
 
 router.post("/signup", shouldNotBeLoggedIn, (req, res) => {
-  const { username, password } = req.body;
+  const { username, password, city } = req.body;
 
   if (!username) {
     return res
@@ -60,12 +60,13 @@ router.post("/signup", shouldNotBeLoggedIn, (req, res) => {
         return User.create({
           username,
           password: hashedPassword,
+          city,
         });
       })
       .then((user) => {
         // binds the user to the session object
         req.session.user = user;
-        res.redirect("/");
+        res.redirect("/profile");
       })
       .catch((error) => {
         if (error instanceof mongoose.Error.ValidationError) {
@@ -122,7 +123,7 @@ router.post("/login", shouldNotBeLoggedIn, (req, res, next) => {
         }
         req.session.user = user;
         // req.session.user = user._id ! better and safer but in this case we saving the entire user object
-        return res.redirect("/");
+        return res.redirect("/profile");
       });
     })
 

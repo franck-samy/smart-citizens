@@ -4,7 +4,7 @@
 
 <body id="signup-body">
    <div class="container">
-      <form action="sign-in" method="POST" id="form" class="form">
+      <form action="login" method="POST" id="form" class="form">
          <h2 id="signup-title">Welcome back!</h2>
 
          <div class="form-control">
@@ -16,6 +16,7 @@
             <label for="password">Password</label>
             <input name="password" id="password" type="password" placeholder="Enter password">
          </div>
+         {{errorMessage}}
 
          <button class="btn">Sign in</button>
       </form>

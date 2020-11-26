@@ -1,6 +1,9 @@
+@import url(‘https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap’);
+
 * {
   margin: 0;
   padding: 0;
+  font-family: ‘Playfair Display’, serif;
 }
 
 #homepage {
@@ -56,7 +59,7 @@
 
 body {
   /* padding: 50px; */
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 100%;
 }
 
 a {
@@ -69,7 +72,7 @@ h1 {
 
 #map {
   width: 100vw;
-  height: 100vw;
+  height: calc(100vh - 130px);
 }
 
 nav {
@@ -107,11 +110,11 @@ nav li {
 #nav-profile a {
   color: indigo;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 16px;
   height: 25px;
-  width: 150px;
+  width: 100px;
   margin-right: 10px;
-  padding: 20px 20px 20px 20px;
+  padding: 20px 15px 15px 15px;
   background-color: white;
   border-radius: 30px;
   border: none;
@@ -144,7 +147,7 @@ nav li {
   opacity: 0.8;
   visibility: visible;
   position: absolute;
-  top: 0px;
+  top: 50px;
 }
 
 p {
@@ -156,11 +159,42 @@ p {
 #box {
   display: flex;
   align-items: top;
+  flex-direction: column;
   background-color: indigo;
   margin-top: 100px;
-  margin-bottom: 50px;
-  height: 60px;
+  height: 150px;
   visibility: hidden;
+}
+
+#box p {
+  display: flex;
+  justify-content: center;
+}
+
+#game-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#profile-btn {
+  color: indigo;
+  text-decoration: none;
+  font-size: 16px;
+  height: 25px;
+  width: 100px;
+  margin-left: 50px;
+  padding: 20px 15px 15px 15px;
+  background-color: white;
+  border-radius: 30px;
+  border: none;
+  text-align: center;
+}
+
+#profile-btn:hover {
+  color: white;
+
+  background-color: indigo;
 }
 
 #ask {
@@ -207,15 +241,23 @@ p {
   background-color: green;
 }
 
+#button-section {
+  display: flex;
+  flex-direction: row;
+}
+
 #skip {
-  width: 100px;
+  width: 50vw;
   height: 50px;
-  background-color: lawngreen;
+  background-color: rgb(77, 133, 77);
   visibility: hidden;
+  border: none;
+  color: white;
+  font-size: 25px;
 }
 
 #refresh {
-  width: 100vw;
+  width: 50vw;
   height: 50px;
   background-color: indigo;
   visibility: visible;
@@ -229,13 +271,20 @@ p {
 }
 
 #profile {
-  height: 180px;
-  width: 180px;
+  height: 130px;
+  width: 130px;
+}
+
+#feed {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 }
 
 #feed img {
-  width: 250px;
-  height: 250px;
+  width: 100px;
+  height: 100px;
 }
 
 #container-profile {
@@ -251,6 +300,8 @@ p {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
+  position: absolute;
+  margin-left: 150px;
 }
 
 #user-info h3 {
@@ -276,11 +327,21 @@ p {
 }
 
 #feed-submit button {
-  height: 50px;
+  height: 30px;
+  width: 80px;
+  background-color: indigo;
+  color: white;
+  border: solid 1px indigo;
+  border-radius: 5px;
+}
+
+#feed-submit button:hover {
+  height: 30px;
   width: 80px;
   background-color: rgb(68, 133, 157);
   color: white;
-  border: solid 1px white;
+  border: solid 1px indigo;
+  border-radius: 5px;
 }
 
 #correctAns {
@@ -344,5 +405,3 @@ p {
   margin-bottom: 50px;
   margin-top: 50px;
 }
-
-/*# sourceMappingURL=style.css.map */

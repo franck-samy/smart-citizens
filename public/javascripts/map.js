@@ -58,39 +58,55 @@ function drawMap(userCenter) {
       document.location.reload();
     });
 
-    if (dist <= 100) {
-      console.log("Question !!!");
-      // True
+    if (!dist <= 100) {
       document.getElementById("box").style.visibility = "visible";
-      document.getElementById("box").innerHTML = "<p>Question : ????</p>";
+      document.getElementById("ask").style.visibility = "visible";
+      document.getElementById("skip").style.visibility = "visible";
+      const button = document.getElementById("skip");
+      button.addEventListener("click", (event) => {
+        document.getElementById("box").style.visibility = "hidden";
+        document.getElementById("ask").style.visibility = "hidden";
+        document.getElementById("skip").style.visibility = "hidden";
+      });
+
+      const firstOption = document.getElementById("options").childNodes[1]
+        .childNodes[1].innerHTML;
+      const answer = document.getElementById("correctAns").innerHTML;
+      const optionsLi = document.getElementById("options").childNodes[1];
+
+      optionsLi.addEventListener("click", (evt) => {
+        if (evt.path[0].innerHTML === answer) {
+          document.getElementById("ask").style.visibility = "hidden";
+          document.getElementById("box").style.visibility = "visible";
+          document.getElementById("skip").style.visibility = "visible";
+          document.getElementById("box").innerHTML =
+            "<p>Congrats! You're right!</p>";
+          axios
+            .post("/api", { points: 5 })
+            .then((serverResponse) => {
+              document.location.reload();
+            })
+            .catch((err) => {
+              console.log("Error", err);
+            });
+        } else {
+          document.getElementById("ask").style.visibility = "hidden";
+          document.getElementById("box").style.visibility = "visible";
+          document.getElementById("skip").style.visibility = "visible";
+          document.getElementById("box").innerHTML =
+            "<p>Sorry, you're wrong</p>";
+          console.log("Wrong");
+        }
+      });
+    } else {
+      document.getElementById("box").style.visibility = "visible";
+      document.getElementById("skip").style.visibility = "visible";
+      document.getElementById("box").innerHTML =
+        "<p>Sorry, you're too far. Keep walking.</p>";
     }
-    //document.getElementById('box').style.visibility = "visible";
-    //document.getElementById('skip').style.visibility = "visible";
-    //document.getElementById('box').innerHTML = "<p>Sorry, you're too far. Keep walking.</p>";
 
     // test ASk box --> Questions
-    document.getElementById("ask").style.visibility = "visible";
-    const firstOption = document.getElementById("options").childNodes[1]
-      .childNodes[1].innerHTML;
-    const answer = document.getElementById("correctAns").innerHTML;
-    const optionsLi = document.getElementById("options").childNodes[1];
 
-    optionsLi.addEventListener("click", (evt) => {
-      if (evt.path[0].innerHTML === answer) {
-        console.log("Right answer");
-        axios
-          .post("/api", { points: 5 })
-          .then((serverResponse) => {
-            document.location.reload();
-            // console.log(serverResponse);
-          })
-          .catch((err) => {
-            console.log("Error", err);
-          });
-      } else {
-        console.log("Wrong");
-      }
-    });
     /*
     return User.findByIdAndUpdate(score, ).then(data => {
       console.log(data);
@@ -135,7 +151,7 @@ var geojson = {
       type: "Feature",
       geometry: {
         type: "Point",
-        coordinates: [7.2603533, 43.702179],
+        coordinates: [7.2777728, 43.7027816],
       },
       properties: {
         title: "Question spot",

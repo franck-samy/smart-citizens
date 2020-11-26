@@ -5,16 +5,27 @@ const userSchema = new Schema({
   username: {
     type: String,
     unique: true,
-    required: [true, 'Must have a username!']
+    required: [true, "Must have a username!"],
   },
   password: {
     type: String,
-    required: [true, 'Must have a password!']
+    required: [true, "Must have a password!"],
   },
   score: {
     type: Number,
     default: 0,
-  }
+  },
+  city: {
+    type: String,
+  },
+  profilePic: {
+    type: String,
+  },
+  images: [
+    {
+      type: String,
+    },
+  ],
 });
 
 const User = model("User", userSchema);
