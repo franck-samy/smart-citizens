@@ -299,9 +299,9 @@ p {
 #user-info {
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  margin-top: 30px;
   position: absolute;
-  margin-left: 150px;
+  margin-left: 200px;
 }
 
 #user-info h3 {

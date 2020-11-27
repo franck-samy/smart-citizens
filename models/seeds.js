@@ -1,5 +1,6 @@
 const Question = require("./Questions.model");
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 // const MONGO_URI = "mongodb://localhost/newproject";
 const MONGO_URI = process.env.MONGODB_URI_LIVE;

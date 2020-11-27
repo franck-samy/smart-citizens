@@ -1,4 +1,6 @@
+const { urlencoded } = require("express");
 const { Schema, model } = require("mongoose");
+const url = "https://s3.amazonaws.com/37assets/svn/765-default-avatar.png";
 
 // TODO: Please make sure you edit the user model to whatever makes sense in this case
 const userSchema = new Schema({
@@ -20,6 +22,7 @@ const userSchema = new Schema({
   },
   profilePic: {
     type: String,
+    default: url,
   },
   images: [
     {
