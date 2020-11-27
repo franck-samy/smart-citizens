@@ -48,8 +48,7 @@ function drawMap(userCenter) {
     let first = coordinates.geometry.coordinates[0];
     let second = coordinates.geometry.coordinates[1];
     let positionOfOurPlaces = new mapboxgl.LngLat(first, second);
-    const dist =
-      Math.round(currentPosition.distanceTo(positionOfOurPlaces)) + " meters";
+    const dist = Math.round(currentPosition.distanceTo(positionOfOurPlaces));
     console.log("DISTANCE", dist);
 
     //button to reload page --> refresh position
@@ -58,7 +57,7 @@ function drawMap(userCenter) {
       document.location.reload();
     });
 
-    if (!dist <= 100) {
+    if (dist <= 100) {
       document.getElementById("box").style.visibility = "visible";
       document.getElementById("ask").style.visibility = "visible";
       document.getElementById("skip").style.visibility = "visible";
